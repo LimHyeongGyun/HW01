@@ -2,13 +2,31 @@
 
 using namespace std;
 
+int sum(int* arr, int size) {
+
+    int sumValue = 0;
+
+    //배열의 요소 합 구하기
+    for (int i = 0; i < size; i++) {
+        sumValue += arr[i];
+    }
+
+    return sumValue;
+}
+
+int average(int sumValue, int size) {
+    //배열의 요소 평균 구하기
+
+    return sumValue / size;
+}
+
 int main()
 {
     int size = 0;
     int* arr = 0;
 
-    int sum = 0;
-    int average = 0;
+    int sumValue = 0;
+    int averageValue = 0;
 
     int sortNum = 0;
     int temp = 0;
@@ -23,23 +41,19 @@ int main()
     //입력받은 길이로 배열 생성하기
     arr = new int[size];
 
-
     //배열에 저장할 숫자 입력받기
     for (int i = 0; i < size; i++) {
-        cout << "입력할" << i + 1 << "번째 숫자를 입력해 주세요.";
+        cout << "입력할" << i + 1 << "번째 숫자를 입력해 주세요. : ";
         cin >> arr[i];
     }
 
-    //배열의 요소 합 구하기
-    for (int i = 0; i < size; i++) {
-        sum += arr[i];
-    }
-    //배열의 요소 평균 구하기
-    average = sum / size;
+    sumValue = sum(arr, size); //sum 함수에서 합 결과 받기
+    averageValue = average(sumValue, size); //average 함수에서 평균 결과 받기
 
     //결과 출력
-    cout << "배열에 저장된 숫자들의 합계:" << sum << endl;
-    cout << "더한 숫자들의 평균:" << average << endl;
+    cout << "배열에 저장된 숫자들의 합계:" << sumValue << endl;
+    cout << "더한 숫자들의 평균:" << averageValue << endl;
+
 
     ////////////배열 정렬하기////////////
 
