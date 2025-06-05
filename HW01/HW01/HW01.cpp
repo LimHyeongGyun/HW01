@@ -14,19 +14,16 @@ int sum(int* arr, int size) {
     return sumValue;
 }
 
-int average(int sumValue, int size) {
+int average(int* arr, int size) {
     //배열의 요소 평균 구하기
 
-    return sumValue / size;
+    return sum(arr, size) / static_cast<double>(size);
 }
 
 int main()
 {
     int size = 0;
     int* arr = 0;
-
-    int sumValue = 0;
-    int averageValue = 0;
 
     int sortNum = 0;
     int temp = 0;
@@ -47,12 +44,9 @@ int main()
         cin >> arr[i];
     }
 
-    sumValue = sum(arr, size); //sum 함수에서 합 결과 받기
-    averageValue = average(sumValue, size); //average 함수에서 평균 결과 받기
-
     //결과 출력
-    cout << "배열에 저장된 숫자들의 합계:" << sumValue << endl;
-    cout << "더한 숫자들의 평균:" << averageValue << endl;
+    cout << "배열에 저장된 숫자들의 합계:" << sum(arr, size) << endl;
+    cout << "더한 숫자들의 평균:" << average(arr, size) << endl;
 
 
     ////////////배열 정렬하기////////////
