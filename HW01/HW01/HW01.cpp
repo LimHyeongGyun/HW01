@@ -2,11 +2,11 @@
 
 using namespace std;
 
+//배열의 요소 합 구하기
 int sum(int* arr, int size) {
 
     int sumValue = 0;
 
-    //배열의 요소 합 구하기
     for (int i = 0; i < size; i++) {
         sumValue += arr[i];
     }
@@ -14,8 +14,8 @@ int sum(int* arr, int size) {
     return sumValue;
 }
 
+//배열의 요소 평균 구하기
 int average(int* arr, int size) {
-    //배열의 요소 평균 구하기
 
     return sum(arr, size) / static_cast<double>(size);
 }
